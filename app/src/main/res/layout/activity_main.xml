@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="info.timgraves.higherorlower.MainActivity">
+
+    <TextView
+        android:id="@+id/numberStatement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I'm thinking of a number between 1 and 20."
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/questionPrompt" />
+
+    <TextView
+        android:id="@+id/questionPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/guessEditText"
+        android:text="Can you guess it?"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp" />
+
+    <EditText
+        android:id="@+id/guessEditText"
+        android:inputType="number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/guessButton"
+        android:layout_centerHorizontal="true"
+        android:hint="Enter a number..."
+        android:ems="15"
+        android:layout_marginBottom="15dp"/>
+
+    <Button
+        android:id="@+id/guessButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Guess"
+        android:onClick="guessNumber" />
+
+    <Button
+        android:id="@+id/newNumButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/guessButton"
+        android:layout_marginTop="70dp"
+        android:text="New Number"
+        android:onClick="newNum" />
+
+</RelativeLayout>
