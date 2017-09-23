@@ -41,8 +41,6 @@ public class MainActivity extends AppCompatActivity {
         String n = guessEditText.getText().toString();
         userNum = Integer.parseInt(n);
 
-        // Toast.makeText(MainActivity.this, "User entered: " + userNum, Toast.LENGTH_LONG).show();
-
         if (userNum == num) {
             Toast.makeText(MainActivity.this, "You guessed it!", Toast.LENGTH_LONG).show();
         } else if (userNum > num) {
