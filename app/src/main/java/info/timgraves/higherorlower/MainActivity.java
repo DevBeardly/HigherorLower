@@ -38,19 +38,22 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "num = " + num);
 
         EditText guessEditText = (EditText) findViewById(R.id.guessEditText);
-        String n = guessEditText.getText().toString();
-        userNum = Integer.parseInt(n);
 
-        if (userNum == num) {
-            Toast.makeText(MainActivity.this, "You guessed it, try again!", Toast.LENGTH_LONG).show();
-            num = newNum();
-        } else if (userNum > num) {
-            Toast.makeText(MainActivity.this, "Lower!", Toast.LENGTH_SHORT).show();
-        } else if (userNum < num) {
-            Toast.makeText(MainActivity.this, "Higher!", Toast.LENGTH_SHORT).show();
+        if (guessEditText.getText().toString().isEmpty()) {
+            Toast.makeText(MainActivity.this, "Please enter a number", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(MainActivity.this, "WTF DID YOU DO?!", Toast.LENGTH_LONG).show();
-        }
+            userNum = Integer.parseInt(guessEditText.getText().toString());
 
+            if (userNum == num) {
+                Toast.makeText(MainActivity.this, "You guessed it, try again!", Toast.LENGTH_LONG).show();
+                num = newNum();
+            } else if (userNum > num) {
+                Toast.makeText(MainActivity.this, "Lower!", Toast.LENGTH_SHORT).show();
+            } else if (userNum < num) {
+                Toast.makeText(MainActivity.this, "Higher!", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(MainActivity.this, "WTF DID YOU DO?!", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 }
