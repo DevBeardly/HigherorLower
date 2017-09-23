@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     public int newNum() {
         Random r = new Random();
-        return r.nextInt(21);
+        return r.nextInt(20) + 1;
     }
 
     public void newNum(View view) {
@@ -42,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
         userNum = Integer.parseInt(n);
 
         if (userNum == num) {
-            Toast.makeText(MainActivity.this, "You guessed it!", Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "You guessed it, try again!", Toast.LENGTH_LONG).show();
+            num = newNum();
         } else if (userNum > num) {
             Toast.makeText(MainActivity.this, "Lower!", Toast.LENGTH_SHORT).show();
         } else if (userNum < num) {
